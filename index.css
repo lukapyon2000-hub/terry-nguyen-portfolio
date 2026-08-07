@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 220 35% 8%;
+    --foreground: 0 0% 98%;
+
+    --muted-foreground: 215 12% 70%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 220 35% 8%;
+
+    --secondary: 220 20% 15%;
+    --muted: 220 20% 14%;
+    --accent: 210 25% 25%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+
+    --font-display: 'Instrument Serif', serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+.font-serif-display {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-sans-body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Glassmorphic utilities */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(186, 215, 255, 0.05);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.03);
+}
+
+/* Moonlight Glow Effects */
+.text-moonlight {
+  color: #f3f4f6;
+  text-shadow: 0 0 20px rgba(224, 231, 255, 0.25);
+}
+
+.glow-moon {
+  box-shadow: 0 0 60px 15px rgba(199, 210, 254, 0.12), 0 0 100px 30px rgba(147, 197, 253, 0.06);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes moonPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-moon-pulse {
+  animation: moonPulse 8s ease-in-out infinite;
+}
+
+.animate-star {
+  animation: starTwinkle 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
